@@ -1,11 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Special+Gothic+Expanded+One&display=swap');
 body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-  }
+  margin: 0;
+  text-align: center;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  background: #222831;
+}
+.navbar{
+  background: #31363F;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: end;
+  gap: 50px;
 
-.centerbox {
+}
 
-    width: 1200px;
+.navbar>div{
+  
+  cursor: pointer;
+  display: flex;
+  color: #f0f0f0;
+  background: #76ABAE;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.navbar>div:hover{
+  background: #396062;
+}
+
+header {
+  margin-bottom: 20px; 
+}
+
+h1{
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 75px;
+  color:#EEEEEE;
+  padding: 50px;
+}
+h3{
+  color:#EEEEEE;
+  padding: 50px;
+}
+
+.container {
+  display: flex; 
+  justify-content: center; 
+  gap: 100px; 
+}
+
+.game1, .game2, .game3 {
+  width: 20vw;
+  height: 20vw;
+  min-width: 200px;
+  min-height: 200px;
+  border: 1px solid #000; 
+  border-radius: 5px; 
+  text-align: center; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.game1:hover, .game2:hover, .game3:hover {
+  background-color: #f0f0f0; 
+  animation: tiltAnimation 5s infinite;
+}
+
+@keyframes tiltAnimation {
+  0% {
+      transform: scale(1.1) rotate(-5deg); 
   }
+  50% {
+      transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+      transform: scale(1.1) rotate(-5deg);
+  }
+}
