@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block content %}
+    <header>
+        <h1>Leaderboards</h1>
+        <div class="subtitle">Miśka Montis!</div>
+        <div class="snakeleaderboard">
+    </header>
+    <div class="scorelist">
+        {% for highscore in highscores %}
+            <div class="score">
+                <h3>{{highscore.playerName}}</h3>
+                <h3>{{highscore.score}} punkcikuw</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
