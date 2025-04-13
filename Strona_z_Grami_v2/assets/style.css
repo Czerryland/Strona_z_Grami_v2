@@ -147,3 +147,30 @@ h2{
   align-items: center;
   justify-content: center;
 }
+.scorelist {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column; 
+}
+
+.score {
+  border: solid 1px;
+  padding: 10px;
+  text-align: center;
+  width: 20vw;
+  border-collapse: collapse;
+  transition: 0.3s;
+  background: #31363F;
+
+}
+
+.score:hover{
+  transform: scale(1.1);
+  background: #396062;
+}
+
+.score:first-of-type:hover{
+  transform: scale(1.1);
+  background: #76ABAE;
+}
