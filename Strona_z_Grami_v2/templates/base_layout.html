@@ -9,8 +9,17 @@
 </head>
 <body>
     <nav class="navbar">
+        {% if user.is_authenticated %} 
+        <div class="logout">
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Log Out</button>
+            </form> 
+        </div>
+        {% else %}
         <a href="{% url 'login' %}"><div class="login">Log In</div></a>
         <a href="{% url 'signup' %}"><div class="register">Sign In</div></a>
+        {% endif %}
     </nav>
     {% block content %}
     {% endblock %}
