@@ -18,7 +18,7 @@ body {
   gap: 50px;
 }
 
-.navbar>div{
+.navbar>a>div{
   
   cursor: pointer;
   display: flex;
@@ -28,9 +28,14 @@ body {
   margin: 5px;
   border-radius: 5px;
   transition: 0.3s;
+  
 }
 
-.navbar>div:hover{
+.navbar>a{
+  text-decoration: none;
+}
+
+.navbar>a>div:hover{
   background: #396062;
 }
 

@@ -9,8 +9,8 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="login">Log In</div>
-        <div class="register">Sign In</div>
+        <a href="{% url 'mainpage' %}"><div class="login">Log In</div></a>
+        <a href="{% url 'signup' %}"><div class="register">Sign In</div></a>
     </nav>
     {% block content %}
     {% endblock %}
