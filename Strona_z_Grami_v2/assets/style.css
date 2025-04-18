@@ -179,3 +179,32 @@ h2{
   transform: scale(1.1);
   background: #76ABAE;
 }
+
+form>input{
+  background: #76ABAE;
+  margin: 20px;
+  padding: 20px;
+  border: none;
+  font-size: 40px;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  transition: 0.3s;
+}
+form>input:hover{
+  background: #497a7c;
+}
+
+form>div>div>ul{
+  list-style-type: none;
+}
+
+
+form>div>label{
+  color:#f0f0f0;
+  font-size: 40px;
+}
+form>div>input{
+  background: #404964;
+  border: none;
+  width: 350px;
+  padding: 10px;
+}
