@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snake</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="centerbox">
+        <div class="game-container">
+            <div class="score-box">Score: <span id="score">123</span></div>
+            <canvas id="gamecanvas" width="800" height="800"></canvas>
+            <button class="start">Start Game</button>
+            <button class="reset">Reset Game</button>
+        </div>
+    </div>
+    <script src="{% static 'snakescript.js' %}"></script>
+</body>
+</html>

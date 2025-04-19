@@ -3,14 +3,14 @@
 {% block content %}
         <header>
             <h1>Strona z Grami v2</h1>
-            <div class="subtitle">Miśka Montis!</div>
+            <div class="subtitle" id="subtitle"></div>
         </header>
         <main>
             <h2>Wybierz gre</h2>
             <div class="container">
-                <div class="game1"><p>Snake</p>
+                <a href="{% url 'snake' %}"><div class="game1"><p>Snake</p>
                     <img src="{% static 'snake.png' %}" alt="snake">
-                </div>
+                </div></a>
                 <div class="game2">Bullet Hell</div>
                 <div class="game3">Clicker</div>
             </div>
@@ -18,4 +18,5 @@
         <div class="leaderboards">
             <a href="{% url 'leaderboard' %}">LEADERBOARDS</a>
         </div>
+        <script src="{% static 'script.js' %}"></script>
     {% endblock %}

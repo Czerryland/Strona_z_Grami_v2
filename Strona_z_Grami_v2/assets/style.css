@@ -120,9 +120,14 @@ h2{
   }
 }
 
-.container>div>img{
+.container>a>div>img{
   width: 15vw;
   height: 15vw;
+}
+
+.container>a{
+  text-decoration: none;
+  color: black;
 }
 
 .leaderboards{
@@ -224,3 +229,45 @@ nav>div>form>button{
 nav>div>form>button:hover{
   background: #396062;
 }
+
+canvas {
+  border: 2px solid #333;
+}
+.centerbox{
+  display: flex;
+  justify-content: center;
+}
+.game-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.game-container>button{
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+.start{
+  background: #76ABAE;
+}
+
+.start:hover{
+  background: #48797b;
+
+}
+
+.reset{
+  background: #ca0f34;
+}
+
+.reset:hover{
+  background: #910b25;
+}
+
