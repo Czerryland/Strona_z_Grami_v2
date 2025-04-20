@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainpage',
     'leaderboard',
-    'accounts'
+    'accounts',
+    'games'
 ]
 
 MIDDLEWARE = [

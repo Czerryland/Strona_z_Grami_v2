@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snake</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="centerbox">
+        <div class="game-container">
+            <div class="score-box">Score: <span id="score">0</span></div>
+            <canvas id="gamecanvas" width="800" height="800"></canvas>
+            <div class="game-over-screen" id="game-over-screen">
+                <p id="game-over-text" class="game-over-text">Game Over!</p>
+                <p id="finalscore" class="finalscore"></p>
+                <button id="play-again" class="play-again">Zagraj ponownie!</button>
+                <form action="{% url 'leaderboard' %}" method="post" class="score_form">
+                    {% csrf_token %}
+                    {{form}}
+                    <input type="submit" value="Zapisz swój wynik" class="save-score">
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <div class="powrot">
+        <a href="{% url 'mainpage' %}">Powrot</a>
+    </div>
+    <script src="{% static 'snakescript.js' %}"></script>
+</body>
+</html>

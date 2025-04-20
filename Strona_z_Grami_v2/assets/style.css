@@ -120,9 +120,14 @@ h2{
   }
 }
 
-.container>div>img{
+.container>a>div>img{
   width: 15vw;
   height: 15vw;
+}
+
+.container>a{
+  text-decoration: none;
+  color: black;
 }
 
 .leaderboards{
@@ -223,4 +228,155 @@ nav>div>form>button{
 
 nav>div>form>button:hover{
   background: #396062;
+}
+
+canvas {
+  border: 2px solid #333;
+}
+.centerbox{
+  display: flex;
+  justify-content: center;
+}
+.game-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.game-container>button{
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+.start{
+  background: #76ABAE;
+}
+
+.start:hover{
+  background: #48797b;
+
+}
+
+.reset{
+  background: #ca0f34;
+}
+
+.reset:hover{
+  background: #910b25;
+}
+.score-box{
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 50px;
+  color:#EEEEEE;
+  padding: 25px;
+}
+#score{
+  animation: scoreAnim 4s infinite;
+  display: inline-block;
+  transform-origin: center;
+}
+
+@keyframes scoreAnim {
+  0% {
+      transform: scale(1.1) rotate(-5deg); 
+  }
+  50% {
+      transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+      transform: scale(1.1) rotate(-5deg);
+  }
+}
+
+@keyframes scoreIncrease {
+  0% {
+      transform: scale(1) rotate(-5deg);
+  }
+  50% {
+      transform: scale(1.5) rotate(-5deg);
+  }
+  100% {
+      transform: scale(1) rotate(-5deg);
+  }
+}
+
+.game-over-screen{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 305px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.game-over-text{
+  font-size: 40px;
+  display: flex;
+}
+.play-again{
+  cursor: pointer;
+  color: #f0f0f0;
+  background: #76ABAE;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+  border: none;
+  font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+.play-again:hover{
+  background: #396062;
+}
+
+.powrot{
+  display: inline-block;
+  position: absolute;
+  top:50px;
+  left: 5vw;
+  background: #76ABAE;
+  padding: 30px;
+  width: 150px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.powrot>a{
+  color:#f0f0f0;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-score{
+  cursor: pointer;
+  color: #f0f0f0;
+  background: #76ABAE;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+  border: none;
+  font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+.score_form>div>label{
+  display: none;
+}
+
+#id_score{
+  display: none;
 }
