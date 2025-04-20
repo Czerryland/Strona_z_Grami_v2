@@ -308,9 +308,14 @@ canvas {
 
 .game-over-screen{
   position: absolute;
-  left: 43vw;
-  top: 400px;
+  left: 50%;
+  transform: translate(-50%);
+  top: 305px;
   display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
 .game-over-text{
   font-size: 40px;
@@ -334,7 +339,9 @@ canvas {
 
 .powrot{
   display: inline-block;
-  position: relative;
+  position: absolute;
+  top:50px;
+  left: 5vw;
   background: #76ABAE;
   padding: 30px;
   width: 150px;
@@ -352,4 +359,24 @@ canvas {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.save-score{
+  cursor: pointer;
+  color: #f0f0f0;
+  background: #76ABAE;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+  border: none;
+  font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+.score_form>div>label{
+  display: none;
+}
+
+#id_score{
+  display: none;
 }

@@ -20,7 +20,10 @@ def loginview(request):
    #login
    user = form.get_user()
    login(request, user)
-   return redirect("mainpage")
+   if 'next' in request.POST:
+    return redirect(request.POST.get('next'))
+   else:
+    return redirect("mainpage")
  else:
   form = AuthenticationForm()
  return render(request, "login.html", {'form':form})

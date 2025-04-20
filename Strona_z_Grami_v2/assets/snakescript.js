@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 const displayscore = document.getElementById("score");
 const gameoverscreen = document.getElementById("game-over-screen");
 const playAgainButton = document.getElementById("play-again");
+const id_score = document.getElementById("id_score");
 
 
 const gridsize = 40;
@@ -79,8 +80,9 @@ function heartbeat(){
 }
 
 function gameover(){
-    gameoverscreen.style.display = "block"
+    gameoverscreen.style.display = "flex"
     clearInterval(gameLoop);
+    id_score.value = score;
 }
 
 document.addEventListener('keydown', (event)=>{
