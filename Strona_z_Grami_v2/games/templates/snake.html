@@ -10,11 +10,18 @@
 <body>
     <div class="centerbox">
         <div class="game-container">
-            <div class="score-box">Score: <span id="score">123</span></div>
+            <div class="score-box">Score: <span id="score">0</span></div>
             <canvas id="gamecanvas" width="800" height="800"></canvas>
-            <button class="start">Start Game</button>
-            <button class="reset">Reset Game</button>
+            <div class="game-over-screen" id="game-over-screen">
+                <p id="game-over-text" class="game-over-text">Game Over!</p>
+                <p id="finalscore" class="finalscore"></p>
+                <button id="play-again" class="play-again">Zagarj ponownie!</button>
+            </div>
         </div>
+        
+    </div>
+    <div class="powrot">
+        <a href="{% url 'mainpage' %}">Powrot</a>
     </div>
     <script src="{% static 'snakescript.js' %}"></script>
 </body>

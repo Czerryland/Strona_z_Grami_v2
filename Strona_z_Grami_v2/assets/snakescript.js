@@ -1,18 +1,28 @@
 const canvas = document.getElementById("gamecanvas");
 const ctx = canvas.getContext('2d');
+const displayscore = document.getElementById("score");
+const gameoverscreen = document.getElementById("game-over-screen");
+const playAgainButton = document.getElementById("play-again");
 
 
 const gridsize = 40;
-const tilecount = canvas.width / gridsize
-let snake = {};
+const tilecount = canvas.width / gridsize;
+let snake = [];
 let gamerunning =  false;
 let dir_x = 0;
 let dir_y = 0;
-let food
-
+let food;
+let ate = false;
+let score = 0;
 
 function beginGame(){
-    snake = {x:10, y:10};
+    gameoverscreen.style.display = "none"
+    score = 0;
+    displayscore.innerHTML = score;
+    ate = false;
+    dir_x = 0;
+    dir_y = 0;
+    snake = [{x:10, y:10}];
     spawnFood()
     gameLoop = setInterval(heartbeat, 100);
 }
@@ -22,19 +32,55 @@ function spawnFood(){
             y: Math.floor(Math.random() * tilecount)}
 }
 
+function updateScore(increment){
+    score+= increment;
+    displayscore.innerHTML = score;
+}
+
 function heartbeat(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'green'
-    ctx.fillRect(snake.x * gridsize, snake.y * gridsize, gridsize, gridsize);
 
-    if (snake.x == food.x && snake.y == food.y){
-        spawnFood()
+    //moving the snake and checking for the collision with food
+    const head = { x: snake[0].x + dir_x, y: snake[0].y + dir_y };
+    if (head.x == food.x && head.y == food.y){
+        ate = true;
+        updateScore(500);
+        spawnFood();
     }
+    snake.unshift(head)
+    if (!ate){snake.pop();}
+    ate = false;
 
-    snake.x += dir_x;
-    snake.y += dir_y;
+
+    //drawin the snake
+    ctx.fillStyle = 'green'
+    snake.forEach((segment, index)=>{
+        ctx.fillRect(segment.x * gridsize, segment.y * gridsize, gridsize, gridsize);
+    });
+    
+    //drawing food
     ctx.fillStyle = 'red';
     ctx.fillRect(food.x * gridsize, food.y * gridsize, gridsize, gridsize );
+
+    //checking for collisions
+    //with the body
+    snake.forEach((segment, index)=>{
+        if (head.x == segment.x && head.y == segment.y && index >= 4){
+            gameover();
+            //console.log("gameover");
+        }
+    });
+    //with the wall
+    if (head.x < 0 || head.x >= tilecount || head.y < 0 || head.y >= tilecount){
+        gameover();
+    }
+    //console.log("x: "+head.x+" y: "+head.y);
+
+}
+
+function gameover(){
+    gameoverscreen.style.display = "block"
+    clearInterval(gameLoop);
 }
 
 document.addEventListener('keydown', (event)=>{
@@ -51,9 +97,11 @@ document.addEventListener('keydown', (event)=>{
         case 'ArrowRight':
             if (dir_x != -1) {dir_x = 1; dir_y =0; }
             break;
+        case 'r':
+            console.log(snake)
     }
 });
 
 beginGame();
-heartbeat();
-console.log("aaa")
+
+playAgainButton.addEventListener("click", beginGame);
