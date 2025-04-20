@@ -1,10 +1,10 @@
-##Activate Virtual Environment
+## Activate Virtual Environment
 
-###Windows
+### Windows
 >venv\Scripts\activate.bat
 
-###Linux
+### Linux
 >source venv/bin/activate
 
-##Activate localhost
+## Activate localhost
 >./Strona_z_Grami_v2/manage.py runserver
